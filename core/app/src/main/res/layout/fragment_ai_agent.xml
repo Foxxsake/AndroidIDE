@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <!-- This is the list that will display the chat history. -->
+    <!-- It's set to fill all the space ABOVE the input area. -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chat_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/input_layout"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp"/>
+
+    <!-- This is the container for the input box and send button at the bottom. -->
+    <LinearLayout
+        android:id="@+id/input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- The text input field where the user will type. -->
+        <!-- The 'layout_weight' makes it expand to fill available space. -->
+        <EditText
+            android:id="@+id/prompt_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Tell the agent what to build..."
+            android:inputType="text"
+            android:maxLines="5"/>
+
+        <!-- The button the user will press to send their message. -->
+        <Button
+            android:id="@+id/send_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Send" />
+    </LinearLayout>
+
+</RelativeLayout>
